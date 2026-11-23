@@ -1,20 +1,14 @@
 cff-version: 1.2.0
-title: "HCC single-cell RNA-seq: macrophage programs and CD8+ T cell exhaustion (re-analysis of public data)"
-message: "If you use this analysis pipeline or code, please cite it using the metadata from this file."
+title: "HCCseq: Single-cell and bulk transcriptomic analysis pipeline for hepatocellular carcinoma"
+message: "If you use this software, please cite it using the metadata from this file."
 type: software
 authors:
-  - family-names: Hajas
-    given-names: Gavin Mateo
-    email: gavin.hajas@gmail.com
-    orcid: "https://orcid.org/0009-0006-6048-714X"
-    affiliation: "University of The Philippines Diliman"
-version: 1.0.0
-date-released: 2026-11-23
-# doi:
+  - family-names: "Hajas"
+    given-names: "Gavin"
 repository-code: "https://github.com/gavinhajas/scRNA-seq_pipeline"
-license:
-  - MIT
-  - CC-BY-4.0
+license: MIT
+version: "1.0.1"
+date-released: "2026-11-23"
 abstract: >-
   Reproducible computational re-analysis of public human hepatocellular carcinoma
   (HCC) single-cell RNA-seq cohorts (GSE149614 discovery; GSE156625 and GSE140228
