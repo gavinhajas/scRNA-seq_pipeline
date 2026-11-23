@@ -4,7 +4,8 @@ message: "If you use this software, please cite it using the metadata from this 
 type: software
 authors:
   - family-names: "Hajas"
-    given-names: "Gavin"
+    given-names: "Gavin Mateo"
+doi: 10.5281/zenodo.24463214
 repository-code: "https://github.com/gavinhajas/scRNA-seq_pipeline"
 license: MIT
 version: "1.0.1"
