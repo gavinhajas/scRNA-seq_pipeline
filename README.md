@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24463214.svg)](https://doi.org/10.5281/zenodo.24463214)
+
 # Macrophage Programs and CD8⁺ T Cell Exhaustion in HCC
 
 **A patient-level re-analysis of public single-cell RNA-seq data**
@@ -605,3 +607,8 @@ Inferred from the paths referenced above.
 ## Contact
 
 Gavin Mateo Hajas · gavin.hajas@gmail.com · Last updated 2026-11-23
+## Citation
+
+If you use this pipeline, please cite:
+
+> Hajas, G. M. (2026). *HCCseq: Single-cell and bulk transcriptomic analysis pipeline for hepatocellular carcinoma*. Zenodo. https://doi.org/10.5281/zenodo.24463214
