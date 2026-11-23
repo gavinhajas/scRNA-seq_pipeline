@@ -1,0 +1,45 @@
+# Exhaustion signature configuration for scripts/06_score_exhaustion.py
+# Everything here is PRE-SPECIFIED and gets frozen in the discovery cohort (GSE149614) before validation data are scored.
+
+paths:
+  raw_counts: data/processed/GSE149614_all_raw.h5ad          # raw counts, all cells, coarse labels in obs
+  cd8_clean: data/processed/GSE149614_cd8_clean.h5ad      # frozen CD8 compartment (10,714 cells)
+  myeloid_clean: data/processed/GSE149614_myeloid_clean.h5ad   # frozen myeloid compartment (15,065 cells)
+  coarse_col: celltype
+  out_scored: data/processed/GSE149614_cd8_scored.h5ad
+  out_tables: results/tables
+  frozen_out: metadata/signatures_frozen_GSE149614.yaml
+
+n_jobs: 4          # parallel workers for UCell im keeping low on an 11 GB machine
+
+texp42:
+  source: >-
+    Zhang C, Sheng Q, Zhang X, et al. Prioritizing exhausted T cell marker genes highlights immune subtypes in
+    pan-cancer. iScience 2023;26(4):106484. doi:10.1016/j.isci.2023.106484. Table S1 (42 genes with consistently
+    positive regression coefficients across six human single-cell datasets). Gene list supplied from the supplement.
+    The original model weights genes (ComCoef); here the genes are used unweighted with UCell.
+  genes: [HAVCR2, KLRC1, SRGAP3, FABP5, ENTPD1, CSF1, PDCD1, TNFSF4, GZMA, MKI67, LGALS3, TOX, TIGIT, FUT8,
+          TNFRSF9, IL2RB, LAG3, NAB1, SLC2A8, CTLA4, ITM2A, GCNT1, PSMB8, PLSCR1, KCNK5, TNIP3, BUB1, PSMA1,
+          TANK, SUB1, ACOT7, NEDD9, HMGB2, SDF2L1, ETFB, EZH2, MCM3, MIS18BP1, RAD21, PSMD9, SLC43A3, PMF1]
+  #own annotation: cell-cycle / proliferation-linked genes.
+  proliferation_genes: [MKI67, BUB1, MCM3, MIS18BP1, EZH2, HMGB2, RAD21, PMF1]
+
+compact6:
+  source: >-
+    Compact exhaustion panel described in a pan-cancer multi-omics paper (PMC11278172) as drawn from several
+    studies. Used as a sensitivity check only.
+  genes: [HAVCR2, LAG3, LAYN, PDCD1, TIGIT, CXCL13]
+
+lineage_filter:
+  # A gene is "lineage-ambiguous" if its mean log-normalised expression in frozen myeloid cells or in hepatocytes is
+  # at least this multiple of its mean in the frozen CD8 cells. Such genes cannot be attributed to the T cell
+  # (possible ambient macrophage/hepatocyte RNA). Computed in the discovery cohort only, then frozen.
+  max_nonT_to_CD8_ratio: 1.0
+  min_nonT_mean: 0.05     # genes with non-T mean below this are never flagged (differences would be noise)
+
+# Gene sets used as per-cell ambient-RNA scores (sensitivity analyses). Our definitions; editable before freezing.
+ambient:
+  hepatocyte: [ALB, APOA1, APOA2, APOC3, SERPINA1, TTR, AMBP, RBP4, APOH, FGB]
+  macrophage: [C1QA, C1QB, C1QC, CD68, CD14, LYZ, SPP1, APOE]
+
+primary_variant: V3_noprolif_lineage

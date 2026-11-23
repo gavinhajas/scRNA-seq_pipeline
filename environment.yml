@@ -1,0 +1,29 @@
+name: bioinfo
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.12
+  - pip
+  - anndata=0.13.4
+  - harmonypy=2.1.0
+  - igraph=1.0.0
+  - leidenalg=0.12.0
+  - matplotlib=3.10.*
+  - numpy=2.5.3
+  - pandas=3.0.5
+  - pyyaml=6.0.3
+  - scanpy
+  - scikit-image=0.26.0
+  - scikit-learn=1.9.1
+  - scipy=1.18.1
+  - wget
+  - r-base
+  - r-circlize
+  - r-dplyr
+  - r-matrix
+  - r-remotes
+  - r-yaml
+  - bioconductor-complexheatmap
+  - pip:
+      - pyucell==0.8.0

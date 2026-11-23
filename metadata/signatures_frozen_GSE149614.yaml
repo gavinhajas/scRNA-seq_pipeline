@@ -1,0 +1,156 @@
+frozen_on: '2026-11-23'
+discovery_cohort: GSE149614
+rule: lineage-ambiguous if max(mean_myeloid, mean_hepatocyte) >= 1.0 x mean_CD8 (log-normalised)
+primary_variant_proposed: V3_noprolif_lineage
+dropped_proliferation:
+- BUB1
+- EZH2
+- HMGB2
+- MCM3
+- MIS18BP1
+- MKI67
+- PMF1
+- RAD21
+dropped_lineage_ambiguous:
+- ACOT7
+- ENTPD1
+- ETFB
+- FABP5
+- GCNT1
+- HAVCR2
+- LGALS3
+- NEDD9
+- PLSCR1
+- PSMA1
+- PSMD9
+- SDF2L1
+- SLC2A8
+- SLC43A3
+- SUB1
+variants:
+  V1_full42:
+  - HAVCR2
+  - KLRC1
+  - SRGAP3
+  - FABP5
+  - ENTPD1
+  - CSF1
+  - PDCD1
+  - TNFSF4
+  - GZMA
+  - MKI67
+  - LGALS3
+  - TOX
+  - TIGIT
+  - FUT8
+  - TNFRSF9
+  - IL2RB
+  - LAG3
+  - NAB1
+  - SLC2A8
+  - CTLA4
+  - ITM2A
+  - GCNT1
+  - PSMB8
+  - PLSCR1
+  - KCNK5
+  - TNIP3
+  - BUB1
+  - PSMA1
+  - TANK
+  - SUB1
+  - ACOT7
+  - NEDD9
+  - HMGB2
+  - SDF2L1
+  - ETFB
+  - EZH2
+  - MCM3
+  - MIS18BP1
+  - RAD21
+  - PSMD9
+  - SLC43A3
+  - PMF1
+  V2_noprolif:
+  - HAVCR2
+  - KLRC1
+  - SRGAP3
+  - FABP5
+  - ENTPD1
+  - CSF1
+  - PDCD1
+  - TNFSF4
+  - GZMA
+  - LGALS3
+  - TOX
+  - TIGIT
+  - FUT8
+  - TNFRSF9
+  - IL2RB
+  - LAG3
+  - NAB1
+  - SLC2A8
+  - CTLA4
+  - ITM2A
+  - GCNT1
+  - PSMB8
+  - PLSCR1
+  - KCNK5
+  - TNIP3
+  - PSMA1
+  - TANK
+  - SUB1
+  - ACOT7
+  - NEDD9
+  - SDF2L1
+  - ETFB
+  - PSMD9
+  - SLC43A3
+  V3_noprolif_lineage:
+  - KLRC1
+  - SRGAP3
+  - CSF1
+  - PDCD1
+  - TNFSF4
+  - GZMA
+  - TOX
+  - TIGIT
+  - FUT8
+  - TNFRSF9
+  - IL2RB
+  - LAG3
+  - NAB1
+  - CTLA4
+  - ITM2A
+  - PSMB8
+  - KCNK5
+  - TNIP3
+  - TANK
+  V4_compact6:
+  - HAVCR2
+  - LAG3
+  - LAYN
+  - PDCD1
+  - TIGIT
+  - CXCL13
+ambient:
+  hepatocyte:
+  - ALB
+  - APOA1
+  - APOA2
+  - APOC3
+  - SERPINA1
+  - TTR
+  - AMBP
+  - RBP4
+  - APOH
+  - FGB
+  macrophage:
+  - C1QA
+  - C1QB
+  - C1QC
+  - CD68
+  - CD14
+  - LYZ
+  - SPP1
+  - APOE

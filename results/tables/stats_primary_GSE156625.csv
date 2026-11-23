@@ -1,0 +1,4 @@
+cohort,analysis,program,n_patients,mean_exposure,rho,p_perm,p_method,p_holm
+GSE156625,PRIMARY,FOLR2_C1Q__filtered_UCell,9,0.5789,0.3667,0.3363,exact,1.0
+GSE156625,PRIMARY,SPP1_MMP__filtered_UCell,9,0.1748,-0.1833,0.6436,exact,1.0
+GSE156625,PRIMARY,TREM2_GPNMB__filtered_UCell,9,0.4186,-0.2667,0.4933,exact,1.0

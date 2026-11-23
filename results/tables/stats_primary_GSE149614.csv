@@ -1,0 +1,4 @@
+analysis,program,n_patients,rho,p_perm,p_method,p_holm
+PRIMARY,FOLR2_C1Q__filtered_UCell,8,-0.69,0.0694,exact,0.1388
+PRIMARY,SPP1_MMP__filtered_UCell,8,0.571,0.1511,exact,0.1511
+PRIMARY,TREM2_GPNMB__filtered_UCell,8,0.762,0.0368,exact,0.1104

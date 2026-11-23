@@ -1,0 +1,46 @@
+# Pre-specified patient-level statistics plan (discovery cohort GSE149614) for scripts/07_patient_level_stats.py
+# Written before any association between macrophage programs and exhaustion was examined.
+# The same plan is applied unchanged to the validation cohorts and to the pooled (Fisher-z) analysis.
+
+paths:
+  exhaustion_scores: results/tables/exhaustion_scores_GSE149614.csv          # per CD8 cell (script 06)
+  program_scores: results/tables/macrophage_program_scores_GSE149614.csv     # per myeloid cell (script 05)
+  clinical_metadata: data/raw/GSE149614/GSE149614_HCC.metadata.updated.txt.gz   # patient -> stage
+  validation_clinical_metadata: metadata/validation_clinical.csv             # Table S1 demographics for GSE156625 & GSE140228
+  out_dir: results/tables
+  tag: GSE149614
+
+primary:
+  sites: [Tumor]                      # primary tumor only
+  min_cd8_cells: 20                   # strict-gate CD8 cells per patient (pre-specified)
+  min_macrophage_cells: 50            # discovery cohort GSE149614 (pre-specified)
+  validation_min_macrophage_cells: 20 # post-hoc amendment for validation cohorts
+  exhaustion_variant: V3_noprolif_lineage_UCell
+  programs:
+    - FOLR2_C1Q__filtered_UCell
+    - SPP1_MMP__filtered_UCell
+    - TREM2_GPNMB__filtered_UCell
+  exposure: mean program score over macrophage-like cells of each patient
+  outcome: median exhaustion score over strict-gate CD8 cells of each patient
+  test: Spearman correlation across patients, exact permutation p-value (Monte Carlo if more than 9 patients)
+  correction: Holm across the 3 programs
+
+pooling:
+  min_fisher_z_patients: 5            # exclude n < 5 from Fisher-z (prevents infinite arctanh at rho = +/-1)
+  min_stouffer_patients: 4            # exact permutation p-values remain finite at n = 4
+  min_cohort_mean_exposure: 0.05      # post-hoc floor matching discovery lineage filter (excludes GSE140228 SPP1)
+  max_i2_for_random_effects: 75.0     # suppress unstable random-effects point estimate when I^2 > 75% or k < 3
+
+sensitivity:
+  exhaustion_variants: [V1_full42_UCell, V2_noprolif_UCell, V3_noprolif_lineage_UCell, V4_compact6_UCell]
+  program_sets: [approved, filtered]
+  extra_site_sets: [[Tumor, PVTT]]
+  no_thresholds: true                 # all patients with at least 1 cell of each kind
+  weighted: true                      # rank correlation weighted by the patient's strict-gate CD8 cell count
+  program_free_macrophage_gate: true  # macrophage-like gate excluding SPP1, TREM2, and all program genes
+  covariates_one_at_a_time: [ambient_hepatocyte, stage]   # partial rank correlation; descriptive only
+  leave_one_patient_out: true
+
+stage_order: {I: 1, II: 2, IIIA: 3, IIIB: 4, IV: 5}
+random_seed: 0
+n_monte_carlo: 200000

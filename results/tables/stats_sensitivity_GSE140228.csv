@@ -1,0 +1,40 @@
+cohort,analysis,program,n_patients,mean_exposure,rho,p_perm,p_method
+GSE140228,variant=V1_full42_UCell|programs=approved,FOLR2_C1Q_UCell,4,0.5049,-1.0,0.0833,exact
+GSE140228,variant=V1_full42_UCell|programs=approved,SPP1_MMP_UCell,4,0.0255,0.8,0.3333,exact
+GSE140228,variant=V1_full42_UCell|programs=approved,TREM2_GPNMB_UCell,4,0.3134,0.2,0.9167,exact
+GSE140228,variant=V1_full42_UCell|programs=filtered,FOLR2_C1Q__filtered_UCell,4,0.5049,-1.0,0.0833,exact
+GSE140228,variant=V1_full42_UCell|programs=filtered,SPP1_MMP__filtered_UCell,4,0.0338,0.8,0.3333,exact
+GSE140228,variant=V1_full42_UCell|programs=filtered,TREM2_GPNMB__filtered_UCell,4,0.3134,0.2,0.9167,exact
+GSE140228,variant=V2_noprolif_UCell|programs=approved,FOLR2_C1Q_UCell,4,0.5049,-1.0,0.0833,exact
+GSE140228,variant=V2_noprolif_UCell|programs=approved,SPP1_MMP_UCell,4,0.0255,0.8,0.3333,exact
+GSE140228,variant=V2_noprolif_UCell|programs=approved,TREM2_GPNMB_UCell,4,0.3134,0.2,0.9167,exact
+GSE140228,variant=V2_noprolif_UCell|programs=filtered,FOLR2_C1Q__filtered_UCell,4,0.5049,-1.0,0.0833,exact
+GSE140228,variant=V2_noprolif_UCell|programs=filtered,SPP1_MMP__filtered_UCell,4,0.0338,0.8,0.3333,exact
+GSE140228,variant=V2_noprolif_UCell|programs=filtered,TREM2_GPNMB__filtered_UCell,4,0.3134,0.2,0.9167,exact
+GSE140228,variant=V3_noprolif_lineage_UCell|programs=approved,FOLR2_C1Q_UCell,4,0.5049,-1.0,0.0833,exact
+GSE140228,variant=V3_noprolif_lineage_UCell|programs=approved,SPP1_MMP_UCell,4,0.0255,0.8,0.3333,exact
+GSE140228,variant=V3_noprolif_lineage_UCell|programs=approved,TREM2_GPNMB_UCell,4,0.3134,0.2,0.9167,exact
+GSE140228,variant=V3_noprolif_lineage_UCell|programs=filtered,FOLR2_C1Q__filtered_UCell,4,0.5049,-1.0,0.0833,exact
+GSE140228,variant=V3_noprolif_lineage_UCell|programs=filtered,SPP1_MMP__filtered_UCell,4,0.0338,0.8,0.3333,exact
+GSE140228,variant=V3_noprolif_lineage_UCell|programs=filtered,TREM2_GPNMB__filtered_UCell,4,0.3134,0.2,0.9167,exact
+GSE140228,variant=V4_compact6_UCell|programs=approved,FOLR2_C1Q_UCell,4,0.5049,-1.0,0.0833,exact
+GSE140228,variant=V4_compact6_UCell|programs=approved,SPP1_MMP_UCell,4,0.0255,0.8,0.3333,exact
+GSE140228,variant=V4_compact6_UCell|programs=approved,TREM2_GPNMB_UCell,4,0.3134,0.2,0.9167,exact
+GSE140228,variant=V4_compact6_UCell|programs=filtered,FOLR2_C1Q__filtered_UCell,4,0.5049,-1.0,0.0833,exact
+GSE140228,variant=V4_compact6_UCell|programs=filtered,SPP1_MMP__filtered_UCell,4,0.0338,0.8,0.3333,exact
+GSE140228,variant=V4_compact6_UCell|programs=filtered,TREM2_GPNMB__filtered_UCell,4,0.3134,0.2,0.9167,exact
+GSE140228,program_free_macrophage_gate,FOLR2_C1Q__filtered_UCell,4,0.391,-0.8,0.3333,exact
+GSE140228,program_free_macrophage_gate,SPP1_MMP__filtered_UCell,4,0.0204,1.0,0.0833,exact
+GSE140228,program_free_macrophage_gate,TREM2_GPNMB__filtered_UCell,4,0.1942,-0.6,0.4167,exact
+GSE140228,no thresholds (all patients with data),FOLR2_C1Q__filtered_UCell,4,0.5049,-1.0,0.0833,exact
+GSE140228,no thresholds (all patients with data),SPP1_MMP__filtered_UCell,4,0.0338,0.8,0.3333,exact
+GSE140228,no thresholds (all patients with data),TREM2_GPNMB__filtered_UCell,4,0.3134,0.2,0.9167,exact
+GSE140228,weighted by strict-gate CD8 cell count,FOLR2_C1Q__filtered_UCell,4,0.5049,-1.0,0.0833,exact
+GSE140228,weighted by strict-gate CD8 cell count,SPP1_MMP__filtered_UCell,4,0.0338,0.8126,0.3333,exact
+GSE140228,weighted by strict-gate CD8 cell count,TREM2_GPNMB__filtered_UCell,4,0.3134,0.1287,0.9167,exact
+GSE140228,partial rho controlling ambient_hepatocyte (descriptive),FOLR2_C1Q__filtered_UCell,4,0.5049,-1.0,,none
+GSE140228,partial rho controlling ambient_hepatocyte (descriptive),SPP1_MMP__filtered_UCell,4,0.0338,0.6667,,none
+GSE140228,partial rho controlling ambient_hepatocyte (descriptive),TREM2_GPNMB__filtered_UCell,4,0.3134,0.4082,,none
+GSE140228,leave-one-patient-out range of rho (min to max -1.0 to -1.0),FOLR2_C1Q__filtered_UCell,3,0.5049,-1.0,,none
+GSE140228,leave-one-patient-out range of rho (min to max 0.5 to 1.0),SPP1_MMP__filtered_UCell,3,0.0338,0.75,,none
+GSE140228,leave-one-patient-out range of rho (min to max -1.0 to 0.5),TREM2_GPNMB__filtered_UCell,3,0.3134,0.5,,none

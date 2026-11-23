@@ -1,0 +1,43 @@
+analysis,program,n_patients,rho,p_perm,p_method
+variant=V1_full42_UCell|programs=approved,FOLR2_C1Q_UCell,8,-0.5,0.2162,exact
+variant=V1_full42_UCell|programs=approved,SPP1_MMP_UCell,8,0.643,0.0962,exact
+variant=V1_full42_UCell|programs=approved,TREM2_GPNMB_UCell,8,0.452,0.2675,exact
+variant=V1_full42_UCell|programs=filtered,FOLR2_C1Q__filtered_UCell,8,-0.5,0.2162,exact
+variant=V1_full42_UCell|programs=filtered,SPP1_MMP__filtered_UCell,8,0.643,0.0962,exact
+variant=V1_full42_UCell|programs=filtered,TREM2_GPNMB__filtered_UCell,8,0.452,0.2675,exact
+variant=V2_noprolif_UCell|programs=approved,FOLR2_C1Q_UCell,8,-0.452,0.2675,exact
+variant=V2_noprolif_UCell|programs=approved,SPP1_MMP_UCell,8,0.524,0.1966,exact
+variant=V2_noprolif_UCell|programs=approved,TREM2_GPNMB_UCell,8,0.429,0.2992,exact
+variant=V2_noprolif_UCell|programs=filtered,FOLR2_C1Q__filtered_UCell,8,-0.452,0.2675,exact
+variant=V2_noprolif_UCell|programs=filtered,SPP1_MMP__filtered_UCell,8,0.524,0.1966,exact
+variant=V2_noprolif_UCell|programs=filtered,TREM2_GPNMB__filtered_UCell,8,0.429,0.2992,exact
+variant=V3_noprolif_lineage_UCell|programs=approved,FOLR2_C1Q_UCell,8,-0.69,0.0694,exact
+variant=V3_noprolif_lineage_UCell|programs=approved,SPP1_MMP_UCell,8,0.571,0.1511,exact
+variant=V3_noprolif_lineage_UCell|programs=approved,TREM2_GPNMB_UCell,8,0.762,0.0368,exact
+variant=V3_noprolif_lineage_UCell|programs=filtered,FOLR2_C1Q__filtered_UCell,8,-0.69,0.0694,exact
+variant=V3_noprolif_lineage_UCell|programs=filtered,SPP1_MMP__filtered_UCell,8,0.571,0.1511,exact
+variant=V3_noprolif_lineage_UCell|programs=filtered,TREM2_GPNMB__filtered_UCell,8,0.762,0.0368,exact
+variant=V4_compact6_UCell|programs=approved,FOLR2_C1Q_UCell,8,-0.762,0.0368,exact
+variant=V4_compact6_UCell|programs=approved,SPP1_MMP_UCell,8,0.762,0.0368,exact
+variant=V4_compact6_UCell|programs=approved,TREM2_GPNMB_UCell,8,0.762,0.0368,exact
+variant=V4_compact6_UCell|programs=filtered,FOLR2_C1Q__filtered_UCell,8,-0.762,0.0368,exact
+variant=V4_compact6_UCell|programs=filtered,SPP1_MMP__filtered_UCell,8,0.762,0.0368,exact
+variant=V4_compact6_UCell|programs=filtered,TREM2_GPNMB__filtered_UCell,8,0.762,0.0368,exact
+sites=Tumor+PVTT,FOLR2_C1Q__filtered_UCell,9,-0.533,0.1475,exact
+sites=Tumor+PVTT,SPP1_MMP__filtered_UCell,9,0.483,0.1938,exact
+sites=Tumor+PVTT,TREM2_GPNMB__filtered_UCell,9,0.317,0.4101,exact
+no thresholds (all patients with data),FOLR2_C1Q__filtered_UCell,10,-0.673,0.0386,monte_carlo
+no thresholds (all patients with data),SPP1_MMP__filtered_UCell,10,0.576,0.0879,monte_carlo
+no thresholds (all patients with data),TREM2_GPNMB__filtered_UCell,10,0.455,0.1916,monte_carlo
+weighted by strict-gate CD8 cell count,FOLR2_C1Q__filtered_UCell,8,-0.649,0.1104,exact
+weighted by strict-gate CD8 cell count,SPP1_MMP__filtered_UCell,8,0.606,0.144,exact
+weighted by strict-gate CD8 cell count,TREM2_GPNMB__filtered_UCell,8,0.749,0.0508,exact
+partial rho controlling ambient_hepatocyte (descriptive),FOLR2_C1Q__filtered_UCell,8,-0.675,,none
+partial rho controlling ambient_hepatocyte (descriptive),SPP1_MMP__filtered_UCell,8,0.503,,none
+partial rho controlling ambient_hepatocyte (descriptive),TREM2_GPNMB__filtered_UCell,8,0.811,,none
+partial rho controlling stage (descriptive),FOLR2_C1Q__filtered_UCell,8,-0.659,,none
+partial rho controlling stage (descriptive),SPP1_MMP__filtered_UCell,8,0.522,,none
+partial rho controlling stage (descriptive),TREM2_GPNMB__filtered_UCell,8,0.811,,none
+leave-one-patient-out range of rho (min to max -0.75 to -0.54),FOLR2_C1Q__filtered_UCell,7,-0.679,,none
+leave-one-patient-out range of rho (min to max 0.43 to 0.68),SPP1_MMP__filtered_UCell,7,0.607,,none
+leave-one-patient-out range of rho (min to max 0.64 to 0.86),TREM2_GPNMB__filtered_UCell,7,0.75,,none

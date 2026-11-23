@@ -1,0 +1,34 @@
+# Raw and processed data
+data/*
+!data/.gitkeep
+*.h5ad
+*.rds
+*.rda
+*.mtx.gz
+*.fastq*
+*.bam
+*.bai
+
+results/logs/*
+!results/logs/.gitkeep
+
+# R environment
+renv/library/
+renv/local/
+renv/cellar/
+renv/lock/
+renv/python/
+renv/staging/
+
+# Python / R / OS / Editor clutter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

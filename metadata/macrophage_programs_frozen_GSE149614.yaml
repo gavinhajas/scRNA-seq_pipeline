@@ -1,0 +1,105 @@
+frozen_on: '2026-11-23'
+discovery_cohort: GSE149614
+rule: lineage-ambiguous if max(mean in ['Hepatocyte', 'T/NK']) >= 1.0 x mean in macrophage-like
+  cells and >= 0.05
+approved_sets:
+  FOLR2_C1Q:
+  - FOLR2
+  - CD163
+  - SEPP1
+  - C1QB
+  SPP1_MMP:
+  - SPP1
+  - MMP9
+  - MMP12
+  - MMP7
+  TREM2_GPNMB:
+  - TREM2
+  - GPNMB
+  - CD9
+filtered_sets:
+  FOLR2_C1Q:
+  - FOLR2
+  - CD163
+  - SEPP1
+  - C1QB
+  SPP1_MMP:
+  - SPP1
+  - MMP9
+  - MMP12
+  TREM2_GPNMB:
+  - TREM2
+  - GPNMB
+  - CD9
+dropped:
+  FOLR2_C1Q: []
+  SPP1_MMP:
+  - MMP7
+  TREM2_GPNMB: []
+macrophage_like_rule:
+  calibrated_on: GSE149614
+  calibrated_date: '2026-11-23'
+  ucell_max_rank: 1500
+  pan_panel_key: gate_pan_macrophage
+  panels:
+    gate_pan_macrophage:
+    - CD68
+    - APOE
+    - TYROBP
+    - FCER1G
+    - C1QA
+    - SPP1
+    - TREM2
+    gate_monocyte_FCN1: &id001
+    - FCN1
+    - S100A8
+    - S100A9
+    - VCAN
+    gate_cDC1: &id002
+    - CLEC9A
+    - XCR1
+    - CADM1
+    gate_cDC2: &id003
+    - CD1C
+    - FCER1A
+    - CLEC10A
+    gate_mregDC: &id004
+    - LAMP3
+    - CCR7
+    - FSCN1
+  min_pan_macrophage: 0.51
+  max_non_macrophage: 0.53
+  rule_description: gate_pan_macrophage_UCell >= 0.51 and max(gate_monocyte_FCN1_UCell,
+    gate_cDC1_UCell, gate_cDC2_UCell, gate_mregDC_UCell) <= 0.53
+  discovery_metrics:
+    precision: 0.8852
+    recall: 0.9043
+    f1: 0.8947
+    jaccard: 0.8094
+macrophage_like_rule_noprogram:
+  calibrated_on: GSE149614
+  calibrated_date: '2026-11-23'
+  ucell_max_rank: 1500
+  pan_panel_key: gate_pan_mac_noprogram
+  panels:
+    gate_pan_mac_noprogram:
+    - CD68
+    - APOE
+    - TYROBP
+    - FCER1G
+    - CSF1R
+    - AIF1
+    - MS4A7
+    gate_monocyte_FCN1: *id001
+    gate_cDC1: *id002
+    gate_cDC2: *id003
+    gate_mregDC: *id004
+  min_pan_macrophage: 0.51
+  max_non_macrophage: 0.53
+  rule_description: gate_pan_mac_noprogram_UCell >= 0.51 and max(gate_monocyte_FCN1_UCell,
+    gate_cDC1_UCell, gate_cDC2_UCell, gate_mregDC_UCell) <= 0.53
+  discovery_metrics:
+    precision: 0.832
+    recall: 0.9079
+    f1: 0.8683
+    jaccard: 0.7672

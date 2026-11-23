@@ -1,0 +1,41 @@
+# Macrophage program definitions for scripts/05_score_macrophage_programs.py
+# PRE-SPECIFIED from published HCC single-cell papers; the same gene sets are applied unchanged to every dataset.
+# Programs overlap biologically, so each cell gets a CONTINUOUS score per program
+# the exclusive display label is for figures only.
+
+paths:
+  myeloid_clean: data/processed/GSE149614_myeloid_clean.h5ad   # frozen discovery myeloid compartment
+  raw_counts: data/processed/GSE149614_all_raw.h5ad          # raw counts, all cells for the lineage check
+  coarse_col: celltype
+  out_scored: data/processed/GSE149614_myeloid_scored.h5ad
+  out_tables: results/tables
+  frozen_out: metadata/macrophage_programs_frozen_GSE149614.yaml
+  dataset_tag: GSE149614
+
+# Same principle as the exhaustion signatures: a program gene is lineage-ambiguous if hepatocytes or T/NK cells express it
+# at least as highly as macrophage-like cells (ignoring noise-level means). Computed in the discovery cohort, then frozen.
+lineage_filter:
+  nonmac_coarse_labels: [Hepatocyte, T/NK]
+  max_nonmac_to_mac_ratio: 1.0
+  min_nonmac_mean: 0.05
+
+n_jobs: 4
+
+programs:
+  FOLR2_C1Q: [FOLR2, CD163, SEPP1, C1QB]       # resident-like / FOLR2+ TAM (e.g. Xu 2025; Hamon 2021; Sharma 2020)
+  SPP1_MMP: [SPP1, MMP9, MMP12, MMP7]          # SPP1+ TAM with MMPs (e.g. Fan 2024; Xu 2025; Jin 2024)
+  TREM2_GPNMB: [TREM2, GPNMB, CD9]             # lipid-associated / LAM-like (e.g. Zeng 2025; Hamon 2021; Zhou 2022)
+
+aliases:
+  SEPP1: [SELENOP]
+  SELENOP: [SEPP1]
+
+# Which discovery clusters count as macrophage-like (frozen discovery labels; monocytes, DC-like and ribosomal-low-
+# information clusters are comparators). A dataset-agnostic rule for validation data is a separate, later step.
+macrophage_cluster_labels: [TAM_SPP1_MMP9, TAM_C1Q_APOE_FOLR2, Kupffer_CD5L_MARCO]
+
+# Hepatocyte ambient-RNA gene set (same as signatures.yaml), scored per cell for sensitivity analyses.
+ambient_hepatocyte: [ALB, APOA1, APOA2, APOC3, SERPINA1, TTR, AMBP, RBP4, APOH, FGB]
+
+# Display label: program with the highest within-macrophage z-score, only if that z-score exceeds this value.
+display_min_z: 0.5
